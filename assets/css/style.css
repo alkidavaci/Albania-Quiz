@@ -56,4 +56,9 @@ h1{
 .hidden{
     display: none;
 }
-
+#correct-incorrect{ 
+    margin-top: 20px;
+    padding: 0 50px;
+    border-top: 2px solid darkgray;
+    color: darkgray;
+}
