@@ -60,14 +60,28 @@ var questionNr = 0;
 var totalScore = 0;
 var questionCount = 1;
 
+function setTimer() {
+        
+  var timerInterval = setInterval(function () {
+
+    secondsLeft--;
+    timeLeft.textContent =  secondsLeft + " s";
+
+      if (secondsLeft === 0){
+          clearInterval(timerInterval);
+          // function for ending game
+       
+          } 
+}, 1000);
+}
 
 // Function to start Quiz
 function startQuiz () {
   home.classList.add("hidden");
   quiz.classList.remove("hidden");
 
-  
   // function to set timer
+  setTimer()
   // function to show questions
 
 }
