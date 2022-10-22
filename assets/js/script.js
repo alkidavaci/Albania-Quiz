@@ -25,6 +25,7 @@ var backBtn = document.querySelector("#back_btn");
 var clearBtn = document.querySelector("#clear_btn");
 
 var timeLeft = document.getElementById("timercount");
+var timeElm = document.getElementsByClassName("timercount");
 
 //  Declared array with objects that contains questions, choices and the right answer index
 var questions = [
@@ -60,18 +61,32 @@ var questionNr = 0;
 var totalScore = 0;
 var questionCount = 1;
 
+function gameOver() {
+   // Show submit results 
+   quiz.classList.add("hidden");
+   submitResult.classList.remove("hidden");
+
+  // totalScore is variable for the user score in the quiz
+  userScore.textContent = "Your final score is : " + totalScore ;
+ };
+
 function setTimer() {
         
   var timerInterval = setInterval(function () {
 
     secondsLeft--;
     timeLeft.textContent =  secondsLeft + " s";
-
+      // No time left
       if (secondsLeft === 0){
-          clearInterval(timerInterval);
+          clearInterval(timerInterval);         
           // function for ending game
-       
+          gameOver();       
           } 
+      // No question left
+      else  if(questionCount >= questionSource.length +1) {
+        clearInterval(timerInterval);
+        gameOver();
+        } 
 }, 1000);
 }
 
