@@ -24,6 +24,8 @@ var highScoreElm = document.querySelector("#highscores");
 var backBtn = document.querySelector("#back_btn");
 var clearBtn = document.querySelector("#clear_btn");
 
+var timeLeft = document.getElementById("timercount");
+
 //  Declared array with objects that contains questions, choices and the right answer index
 var questions = [
   {
@@ -52,3 +54,23 @@ var questions = [
     asnwer: 4,
   },
 ];
+
+var secondsLeft = 100;
+var questionNr = 0;
+var totalScore = 0;
+var questionCount = 1;
+
+
+// Function to start Quiz
+function startQuiz () {
+  home.classList.add("hidden");
+  quiz.classList.remove("hidden");
+
+  
+  // function to set timer
+  // function to show questions
+
+}
+
+// Event Listener to start quiz
+startBtn.addEventListener("click", startQuiz);
