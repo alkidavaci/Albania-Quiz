@@ -1,7 +1,9 @@
+//Define variable
+var clearScores = document.querySelector("#clearscores"); 
+var olListElm = document.querySelector("#list");
+
 // Functiom of creating the list of Scores 
 function checkList() {
-
-    var olListElm = document.querySelector("#list");
 
     var newInfo = JSON.parse(localStorage.getItem("newInfo")) || [];
 
@@ -20,3 +22,14 @@ function checkList() {
 }
 // Call function to create the list
 checkList();
+
+
+// Clear local storage
+function clearLocalStorage(){
+    localStorage.clear();
+    newInfo=[];
+    olListElm.innerHTML=""
+  }
+
+// Event Listener to cleare storage
+clearScores.addEventListener("click", clearLocalStorage)
