@@ -1,3 +1,5 @@
+// Declare an array of objects from local storage 
+var newInfo = JSON.parse(localStorage.getItem("newInfo"))||[]; 
 // Define variables
 var home = document.querySelector("#home_page");
 var startBtn = document.querySelector("#startbtn");
@@ -20,9 +22,11 @@ var userInitial = document.querySelector("#initial");
 var submitBtn = document.querySelector("#submitbtn");
 
 var highScoreElm = document.querySelector("#highscores");
+var olListElm = document.querySelector("#list");
 
-var backBtn = document.querySelector("#back_btn");
-var clearBtn = document.querySelector("#clear_btn");
+
+var goBack = document.querySelector("#goback");
+var clearScores = document.querySelector("#clearscores");
 
 var timeLeft = document.getElementById("timercount");
 var timeElm = document.getElementsByClassName("timercount");
@@ -80,7 +84,7 @@ function setTimer() {
     timeLeft.textContent = secondsLeft + " s";
     // No time left
     if (secondsLeft <= 0) {
-     
+
       clearInterval(timerInterval);
       // function for ending game
       gameOver();
@@ -132,15 +136,15 @@ function checkAnswer(e) {
     totalScore = secondsLeft;
 
   } else {
-    // Decrease 10 sec when is wrong and stor time
+    // Decrease 10 sec when is wrong and store time
     secondsLeft = secondsLeft - 10;
     totalScore = secondsLeft;
 
     correctIncorrect.textContent = "Wrong!";
   }
-  //THEN I am presented with another question
+
+  // Show next question
   if (questionNr < questions.length - 1) {
-    // call showQuestions to bring in next question when any reactBtn is clicked
     showQuestion(questionNr + 1);
   }
   else {
@@ -149,14 +153,34 @@ function checkAnswer(e) {
   questionCount++;
 }
 
+// Store the initial and value
+function storeScore(e){
+  // Prevent default
+  e.preventDefault()
+  
+  // Create an object user initial and score 
+    var userInfo = {
+    user: userInitial.value ,
+    score: totalScore
+  }
+  // Push new object in array of newInfo
+  newInfo.push(userInfo)
+  // Store created object to local storage 
+  localStorage.setItem("newInfo", JSON.stringify(newInfo));
+ 
+}
 
 
 // Event Listener to for each choice
-
 choicesElem.forEach(function (e) {
 
   // Click on choices to show if is correct answer and to go to next question 
   e.addEventListener("click", checkAnswer);
 });
+
 // Event Listener to start quiz
 startBtn.addEventListener("click", startQuiz);
+
+// Event Listener to Save initials and score
+submitBtn.addEventListener("click", storeScore);
+
