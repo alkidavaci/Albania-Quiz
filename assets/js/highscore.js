@@ -5,6 +5,9 @@ function checkList() {
 
     var newInfo = JSON.parse(localStorage.getItem("newInfo")) || [];
 
+    // Show only 5 high scores 
+    newInfo = newInfo.splice(0, 5)
+
     // Sort the array before we create the list
     newInfo = newInfo.sort((a, b) => b.score - a.score)
 
@@ -13,7 +16,6 @@ function checkList() {
         var newLi = document.createElement("li");
         newLi.textContent = newInfo[i].user + " - " + newInfo[i].score
         olListElm.append(newLi)
-
     }
 }
 // Call function to create the list
