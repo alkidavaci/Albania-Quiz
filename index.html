@@ -44,13 +44,15 @@
         <p id="user_score">"Your score is "</p>
         <!-- Will add from script.js users score in span element-->
         <form>
-            <label for="initial">Enter your initial: <span id="initial"></span></label>
+            <label for="initial">Enter your initial:</label>
             <input type="text" id="initial" name="initial">
-            <button class="btn" id="submitbtn">SAVE</button>
+            <!-- go to highscore.html  -->
+            <button class="btn" id="submitbtn" onclick="location.href = 'highscore.html';">SAVE</button>
         </form>
 
     </div>
     <script src="./assets/js/script.js"></script>
+    
 </body>
 
 </html>
