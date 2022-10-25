@@ -22,11 +22,6 @@ var userInitial = document.querySelector("#initial");
 var submitBtn = document.querySelector("#submitbtn");
 
 var highScoreElm = document.querySelector("#highscores");
-var olListElm = document.querySelector("#list");
-
-
-var goBack = document.querySelector("#goback");
-var clearScores = document.querySelector("#clearscores");
 
 var timeLeft = document.getElementById("timercount");
 var timeElm = document.getElementsByClassName("timercount");

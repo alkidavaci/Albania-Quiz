@@ -46,14 +46,6 @@ p {
     padding-top: 20px;
 }
 
-#highscores {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    margin: 150px 30%;
-}
-
 #goback {
     margin-right: 30px;
 }
@@ -66,14 +58,22 @@ p {
     display: none;
 }
 
+#highscores {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 150px 30%;
+}
+
+/* Correct or Wrong answer */
 #correct-incorrect {
     margin-top: 20px;
     padding: 0 50px;
     border-top: 2px solid darkgray;
     color: darkgray;
 }
-
-
+/* Added list of scores */
 #list li {
     list-style-position: inside;
     text-align: center;
