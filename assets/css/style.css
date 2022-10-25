@@ -1,16 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Nova+Square&display=swap');
-*{
+
+* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
     font-family: 'Nova Square', cursive;
     background-color: white;
 }
-body{
+
+body {
     height: 100%;
     width: 100% auto;
 }
-.top{
+
+.top {
     display: flex;
     justify-content: space-between;
     padding: 5px;
@@ -18,47 +21,74 @@ body{
 
 .home_page,
 .quiz,
-.submitResult
-{
+.submitResult {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     padding-top: 80px;
 }
-.btn{
+
+.btn {
     color: aliceblue;
     background-color: red;
     padding: 5px 20px;
     margin-top: 20px;
 }
-h1{
+
+h1 {
     font-size: 70px;
 }
- p{
+
+p {
     font-size: 20px;
     text-align: center;
     padding-top: 20px;
 }
-#highscores{
+
+#highscores {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    margin: 100px 30%; 
+    margin: 150px 30%;
 }
-#goback{
+
+#goback {
     margin-right: 30px;
 }
-#submitbtn{
-    margin: 0;   
+
+#submitbtn {
+    margin: 0;
 }
-.hidden{
+
+.hidden {
     display: none;
 }
-#correct-incorrect{ 
+
+#correct-incorrect {
     margin-top: 20px;
     padding: 0 50px;
     border-top: 2px solid darkgray;
     color: darkgray;
+}
+
+
+#list li {
+    list-style-position: inside;
+    text-align: center;
+    margin-top: 5px;
+    width: 350px;
+}
+
+#list li:nth-child(odd) {
+    background-color: rgb(218, 172, 172)
+}
+
+#list li:nth-child(even) {
+    background-color: rgb(248, 233, 233)
+}
+.buttons{
+    display: flex;
+    justify-content: center;
 }

@@ -31,5 +31,5 @@ function clearLocalStorage(){
     olListElm.innerHTML=""
   }
 
-// Event Listener to cleare storage
+// Event Listener to clear the list
 clearScores.addEventListener("click", clearLocalStorage)
